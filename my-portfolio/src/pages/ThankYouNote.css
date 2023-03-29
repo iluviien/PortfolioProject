@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins&family=Roboto:ital,wght@1,100&family=Satisfy&display=swap");
+h1 {
+  font-family: "Dancing Script";
+  font-size: 65px;
+  text-align: center;
+  color: plum;
+  text-shadow: 10px 10px 10px rgb(155, 155, 155);
+}
+.images-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  margin-top: 200px;
+}
+.thanks-images {
+  border-radius: 150px;
+
+  width: 300px;
+  height: 300px;
+  margin-right: 100px;
+}
