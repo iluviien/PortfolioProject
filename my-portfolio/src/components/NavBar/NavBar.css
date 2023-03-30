@@ -1,0 +1,9 @@
+.navbar.nav-bar-default {
+  background-color: #cf9ccd;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .container.navbar-container {
+    width: 100%;
+    padding: 0;
+  }
+}
