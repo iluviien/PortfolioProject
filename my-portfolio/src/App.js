@@ -1,8 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 import AboutMe from "./components/AboutMeSection/AboutMe";
-import "./App.css";
 import ThankYouNote from "./pages/ThankYouNote";
 import NavBar from "./components/NavBar/NavBar";
 
