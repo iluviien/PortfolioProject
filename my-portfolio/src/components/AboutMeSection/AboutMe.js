@@ -4,6 +4,7 @@ import CardElement from "./Card";
 import CuteButton from "../CuteButton";
 import logo from "../../images/logo.png";
 import AlinaAvatar from "../SecondSection/AlinaAvatar";
+import MessageBoard from "./../../strapi/MessageBoard";
 function AboutMe(props) {
   return (
     <div>
@@ -48,6 +49,7 @@ function AboutMe(props) {
             </p>
           </div>
         </CardElement>
+        <MessageBoard />
       </div>
     </div>
   );
