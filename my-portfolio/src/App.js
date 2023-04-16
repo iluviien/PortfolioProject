@@ -1,9 +1,26 @@
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AboutMe from "./components/AboutMeSection/AboutMe";
 import ThankYouNote from "./pages/ThankYouNote";
 import NavBar from "./components/NavBar/NavBar";
+import { Card, CardBody } from "@chakra-ui/react";
+import MessageBoard from "./strapi/MessageBoard";
+import MessageInput from "./strapi/MessageInput";
 
 function App() {
+  const [messages, setMessages] = useState([]);
+  const handleFormSubmit = message => {
+    setMessages(prevMessages => [
+      ...prevMessages,
+      {
+        name: message.name,
+        message: message.message,
+        avatar:
+          "https://i.pinimg.com/564x/28/e5/fd/28e5fdc6f18f16cbb9b66539eed36094.jpg"
+      }
+    ]);
+  };
+
   return (
     <BrowserRouter>
       <NavBar />
@@ -11,6 +28,15 @@ function App() {
         <Route path="/" element={<AboutMe />} />
         <Route path="/ThankYouNote" element={<ThankYouNote />} />
       </Routes>
+      <Card bg="purple" mt="50px">
+        <CardBody>
+          <MessageInput onSubmit={handleFormSubmit} />
+        </CardBody>
+        <CardBody>
+          <MessageBoard messages={messages} />
+        </CardBody>
+      </Card>
+      );
     </BrowserRouter>
   );
 }
