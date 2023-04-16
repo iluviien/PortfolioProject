@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AboutMe from "./components/AboutMeSection/AboutMe";
 import ThankYouNote from "./pages/ThankYouNote";
 import NavBar from "./components/NavBar/NavBar";
-import { Card, CardBody } from "@chakra-ui/react";
+import { Card, CardBody, Flex } from "@chakra-ui/react";
 import MessageBoard from "./strapi/MessageBoard";
 import MessageInput from "./strapi/MessageInput";
 
@@ -24,19 +24,31 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
+
       <Routes>
         <Route path="/" element={<AboutMe />} />
         <Route path="/ThankYouNote" element={<ThankYouNote />} />
       </Routes>
-      <Card bg="purple" mt="50px">
-        <CardBody>
-          <MessageInput onSubmit={handleFormSubmit} />
-        </CardBody>
-        <CardBody>
-          <MessageBoard messages={messages} />
-        </CardBody>
-      </Card>
-      );
+      <Flex
+        alignItems="center"
+        justifyContent="center"
+        direction={["column", "column", "row"]}
+        mt="50px"
+      >
+        <Flex direction="column" alignItems="left" mr={[0, 0, 10]}>
+          <Card bg="purple">
+            <CardBody>
+              <MessageInput onSubmit={handleFormSubmit} />
+            </CardBody>
+          </Card>
+        </Flex>
+
+        <Card bg="purple" ml={[0, 0, 10]}>
+          <CardBody>
+            <MessageBoard messages={messages} />
+          </CardBody>
+        </Card>
+      </Flex>
     </BrowserRouter>
   );
 }

@@ -1,31 +1,21 @@
-import {
-  Card,
-  //CardBody,
-  Box,
-  //VStack,
-  //Input,
-  //Textarea,
-  // HStack,
-  //Button,
-  Text,
-  //Stack,
-  Avatar,
-  //Divider,
-  Flex
-  //Spacer,
-  //IconButton,
-  //Tooltip,
-  //useToast
-} from "@chakra-ui/react";
+import { Card, Box, Text, Avatar, Flex } from "@chakra-ui/react";
 function MessageBoard({ messages }) {
   return (
     <Card>
       {messages.map((message, index) => (
-        <Flex key={index} alignItems="center" my={3} mx={3}>
+        <Flex
+          key={index}
+          alignItems="center"
+          my={3}
+          mx={3}
+          style={{ wordWrap: "break-word", maxWidth: "100%" }}
+        >
           <Avatar size="lg" name={message.name} src={message.avatar} mr={4} />
-          <Box>
-            <Text fontWeight="bold">{message.name}</Text>
-            <Text>{message.message}</Text>
+          <Box maxW="400px">
+            <Text overflowWrap="break-word" fontWeight="bold">
+              {message.name}
+            </Text>
+            <Text overflowWrap="break-word">{message.message}</Text>
           </Box>
         </Flex>
       ))}
