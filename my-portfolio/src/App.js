@@ -35,19 +35,28 @@ function App() {
         direction={["column", "column", "row"]}
         mt="50px"
       >
-        <Flex direction="column" alignItems="left" mr={[0, 0, 10]}>
-          <Card bg="purple">
+        <div
+          style={{
+            backgroundColor: "red",
+            display: "flex",
+            justifyContent: "space-between",
+            flex: 1
+          }}
+        >
+          <Flex direction="column" alignItems="left" mr={[0, 0, 10]}>
+            <Card bg="purple">
+              <CardBody>
+                <MessageInput onSubmit={handleFormSubmit} />
+              </CardBody>
+            </Card>
+          </Flex>
+
+          <Card bg="purple" ml={[0, 0, 10]}>
             <CardBody>
-              <MessageInput onSubmit={handleFormSubmit} />
+              <MessageBoard messages={messages} />
             </CardBody>
           </Card>
-        </Flex>
-
-        <Card bg="purple" ml={[0, 0, 10]}>
-          <CardBody>
-            <MessageBoard messages={messages} />
-          </CardBody>
-        </Card>
+        </div>
       </Flex>
     </BrowserRouter>
   );
