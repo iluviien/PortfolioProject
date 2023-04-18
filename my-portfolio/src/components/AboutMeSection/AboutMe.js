@@ -1,4 +1,3 @@
-// import InfoSection from "../SecondSection/InfoSection";
 import React from "react";
 import { Image, Grid, GridItem, Text, Card, Flex } from "@chakra-ui/react";
 import working from "../.././images/working.gif";

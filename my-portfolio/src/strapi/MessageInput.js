@@ -27,6 +27,7 @@ function MessageInput({ onSubmit }) {
       alignItems="left"
       padding="10px"
       boxShadow="0 0 50px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.5)"
+      bg="transparent"
     >
       <form onSubmit={handleSubmit}>
         <FormControl id="name" isRequired>

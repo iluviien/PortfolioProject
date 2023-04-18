@@ -5,6 +5,7 @@ function MessageBoard({ messages }) {
   }
   return (
     <Card
+      bg="transparent"
       borderRadius="50px"
       padding="10px"
       boxShadow="0 0 50px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.5)"
