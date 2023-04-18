@@ -21,7 +21,13 @@ function MessageInput({ onSubmit }) {
   };
 
   return (
-    <Card alignItems="left">
+    <Card
+      borderRadius="25px"
+      p="40px"
+      alignItems="left"
+      padding="10px"
+      boxShadow="0 0 50px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.5)"
+    >
       <form onSubmit={handleSubmit}>
         <FormControl id="name" isRequired>
           <FormLabel>Name</FormLabel>

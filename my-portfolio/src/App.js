@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AboutMe from "./components/AboutMeSection/AboutMe";
 import ThankYouNote from "./pages/ThankYouNote";
 import NavBar from "./components/NavBar/NavBar";
-import { Card, CardBody, Flex } from "@chakra-ui/react";
+import { Grid, GridItem, Card, Flex } from "@chakra-ui/react";
 import MessageBoard from "./strapi/MessageBoard";
 import MessageInput from "./strapi/MessageInput";
 
@@ -29,34 +29,33 @@ function App() {
         <Route path="/" element={<AboutMe />} />
         <Route path="/ThankYouNote" element={<ThankYouNote />} />
       </Routes>
-      <Flex
-        alignItems="center"
-        justifyContent="center"
-        direction={["column", "column", "row"]}
-        mt="50px"
-      >
-        <div
-          style={{
-            backgroundColor: "red",
-            display: "flex",
-            justifyContent: "space-between",
-            flex: 1
-          }}
-        >
-          <Flex direction="column" alignItems="left" mr={[0, 0, 10]}>
-            <Card bg="purple">
-              <CardBody>
-                <MessageInput onSubmit={handleFormSubmit} />
-              </CardBody>
-            </Card>
-          </Flex>
 
-          <Card bg="purple" ml={[0, 0, 10]}>
-            <CardBody>
+      <Flex align="center" justify="center">
+        <Card
+          boxShadow="0 0 50px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.5)"
+          mt="100px"
+          w="80%"
+          borderRadius="50px"
+          p="30px"
+        >
+          <Grid
+            templateColumns="repeat(5, 1fr)"
+            templateRows="repeat(2, 1fr)"
+            gap={6}
+            // ml="100px"
+            // mr="100px"
+            // justifyContent="center"
+            // alignItems="center"
+            p="10px"
+          >
+            <GridItem colStart={1} colEnd={3} rowStart={1} rowEnd={2}>
+              <MessageInput onSubmit={handleFormSubmit} />
+            </GridItem>
+            <GridItem colStart={4} colEnd={5} rowStart={1} rowEnd={3}>
               <MessageBoard messages={messages} />
-            </CardBody>
-          </Card>
-        </div>
+            </GridItem>
+          </Grid>
+        </Card>
       </Flex>
     </BrowserRouter>
   );
