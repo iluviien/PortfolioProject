@@ -31,9 +31,8 @@ function App() {
       backgroundSize="cover"
       minHeight="100vh"
     >
+      <NavBar />
       <BrowserRouter>
-        <NavBar />
-
         <Routes>
           <Route path="/" element={<AboutMe />} />
           <Route path="/ThankYouNote" element={<ThankYouNote />} />

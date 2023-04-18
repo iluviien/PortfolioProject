@@ -1,4 +1,5 @@
 import { Card, Box, Text, Avatar, Flex } from "@chakra-ui/react";
+// import { fetchMessages } from "./api";
 function MessageBoard({ messages }) {
   if (messages.length === 0) {
     return null; // If there are no messages, don't render the Card element
