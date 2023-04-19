@@ -13,16 +13,16 @@ function App() {
       backgroundRepeat="no-repeat"
       backgroundAttachment="fixed"
       backgroundSize="cover"
-      minHeight="100vh"
+      minHeight="250vh"
     >
-      <NavBar />
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route path="/" element={<AboutMe />} />
           <Route path="/ThankYouNote" element={<ThankYouNote />} />
         </Routes>
+        <MessagePlatform />
       </BrowserRouter>
-      <MessagePlatform />
     </Box>
   );
 }
