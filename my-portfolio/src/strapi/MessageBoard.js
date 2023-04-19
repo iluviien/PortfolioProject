@@ -25,10 +25,19 @@ function MessageBoard({ messages }) {
             mr={4}
           />
           <Box maxW="400px" p={{ base: "5px", md: "10px" }}>
-            <Text overflowWrap="break-word" fontWeight="bold">
+            <Text
+              overflowWrap="break-word"
+              fontWeight="bold"
+              fontSize={{ base: "14px", md: "20px" }}
+            >
               {message.name}
             </Text>
-            <Text overflowWrap="break-word">{message.message}</Text>
+            <Text
+              overflowWrap="break-word"
+              fontSize={{ base: "14px", md: "20px" }}
+            >
+              {message.message}
+            </Text>
           </Box>
         </Flex>
       ))}

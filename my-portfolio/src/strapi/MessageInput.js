@@ -40,8 +40,9 @@ function MessageInput({ onSubmit }) {
         </FormControl>
 
         <FormControl id="message" isRequired>
-          <FormLabel>Message</FormLabel>
+          <FormLabel fontSize={{ base: "14px", md: "20px" }}>Message</FormLabel>
           <Textarea
+            fontSize={{ base: "14px", md: "20px" }}
             value={message}
             onChange={event => setMessage(event.target.value)}
           />
