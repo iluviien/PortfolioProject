@@ -8,6 +8,7 @@ function NavBar() {
       </Heading>
       <Spacer />
       <Button
+        as="a"
         href="https://github.com/iluviien"
         fontFamily="Dancing Script"
         textTransform="none"

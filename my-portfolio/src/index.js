@@ -2,13 +2,24 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, ThemeProvider } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react";
+const theme = extendTheme({
+  breakpoints: {
+    sm: "320px", // custom breakpoint for small screens
+    md: "768px",
+    lg: "960px",
+    xl: "1200px"
+  }
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ChakraProvider>
-      <App />
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
     </ChakraProvider>
   </React.StrictMode>
 );

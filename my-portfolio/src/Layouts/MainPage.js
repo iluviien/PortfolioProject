@@ -2,11 +2,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MessagePlatform from "../strapi/MessagePlatform";
 import AboutMe from "../components/AboutMeSection/AboutMe";
 import ThankYouNote from "../pages/ThankYouNote";
-import { Flex } from "@chakra-ui/react";
+import { Flex, VStack } from "@chakra-ui/react";
 import InfoSection from "../components/SecondSection/InfoSection";
 function MainPage() {
   return (
-    <Flex align="center" direction="column" gap={20} mt="100px">
+    <VStack align="center" direction="column" gap={20} mt="100px">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<AboutMe />} />
@@ -15,7 +15,7 @@ function MainPage() {
         <InfoSection />
         <MessagePlatform />
       </BrowserRouter>
-    </Flex>
+    </VStack>
   );
 }
 export default MainPage;

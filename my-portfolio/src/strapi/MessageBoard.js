@@ -15,7 +15,11 @@ function MessageBoard({ messages }) {
         <Flex
           key={index}
           alignItems="center"
-          style={{ wordWrap: "break-word", maxWidth: "100%" }}
+          style={{
+            wordWrap: "break-word",
+            maxWidth: "500px",
+            overflow: "hidden"
+          }}
           p="10px"
         >
           <Avatar
@@ -24,11 +28,11 @@ function MessageBoard({ messages }) {
             src={message.avatar}
             mr={4}
           />
-          <Box maxW="400px" p={{ base: "5px", md: "10px" }}>
+          <Box maxW="500px" p={{ base: "5px", md: "10px" }}>
             <Text
               overflowWrap="break-word"
               fontWeight="bold"
-              fontSize={{ base: "14px", md: "20px" }}
+              fontSize={{ base: "10px", md: "15px" }}
             >
               {message.name}
             </Text>

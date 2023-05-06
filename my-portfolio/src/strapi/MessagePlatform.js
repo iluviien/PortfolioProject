@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Grid, GridItem, Container } from "@chakra-ui/react";
+import { Grid, GridItem, VStack } from "@chakra-ui/react";
 import MessageInput from "./MessageInput";
 import MessageBoard from "./MessageBoard";
 
@@ -65,22 +65,40 @@ function MessagePlatform() {
   }
 
   return (
-    <Container mt="100px">
-      <Grid
+    <VStack mt="100px">
+      {/* <Grid
         templateColumns="repeat(2, 1fr)"
         templateRows="repeat(2, 1fr)"
         gap={7}
         p="10px"
       >
-        <GridItem minW="250px" colStart={1} colEnd={2} rowStart={1} rowEnd={2}>
+        <GridItem minW="150px" colStart={1} colEnd={2} rowStart={1} rowEnd={2}>
           <MessageInput onSubmit={addMessageHandler} />
         </GridItem>
 
         <GridItem colStart={2} colEnd={3}>
           <MessageBoard messages={messages} />
         </GridItem>
+      </Grid> */}
+      <Grid
+        templateColumns="repeat(2, 1fr)"
+        templateRows={{ base: "repeat(3, 1fr)", md: "repeat(2, 1fr)" }}
+        gap={2}
+        p="10px"
+      >
+        <GridItem minW="250px" colStart={1} colEnd={2} rowStart={1} rowEnd={2}>
+          <MessageInput onSubmit={addMessageHandler} />
+        </GridItem>
+        <GridItem
+          colStart={{ base: 1, md: 2 }}
+          colEnd={3}
+          rowStart={{ base: 2, md: 1 }}
+          rowEnd={3}
+        >
+          <MessageBoard messages={messages} />
+        </GridItem>
       </Grid>
-    </Container>
+    </VStack>
   );
 }
 
