@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Grid, GridItem, VStack } from "@chakra-ui/react";
+import { Box, Grid, GridItem, HStack, Flex, Stack } from "@chakra-ui/react";
+
 import MessageInput from "./MessageInput";
 import MessageBoard from "./MessageBoard";
 
@@ -61,30 +62,55 @@ function MessagePlatform() {
     content = <p>{error}</p>;
   }
   if (isLoading) {
-    content = <p>Loading...</p>;
+    content = <p>Loading messages...</p>;
   }
 
   return (
-    <VStack mt="100px">
-      <Grid
-        templateColumns="repeat(2, 1fr)"
-        templateRows={{ base: "repeat(3, 1fr)", md: "repeat(2, 1fr)" }}
-        gap={2}
-        p="10px"
+    // <HStack>
+    //   <Grid
+    //     justifyContent="start"
+    //     templateColumns="repeat(2, 1fr)"
+    //     templateRows={{ base: "repeat(3, 1fr)", md: "repeat(2, 1fr)" }}
+    //     gap={2}
+    //     p="10px"
+    //     maxH={{ base: "100%", sm: "300px" }}
+    //     maxW={{ base: "100%", sm: "300px" }}
+    //     alignItems="flex-start"
+    //   >
+    //     <GridItem minW="250px" colStart={1} colEnd={2} rowStart={1} rowEnd={2}>
+    //       <MessageInput onSubmit={addMessageHandler} />
+    //     </GridItem>
+    //     <GridItem
+    //       colStart={{ base: 1, md: 2 }}
+    //       colEnd={3}
+    //       rowStart={{ base: 2, md: 1 }}
+    //       rowEnd={3}
+    //     >
+    //       <MessageBoard messages={messages} />
+    //     </GridItem>
+    //   </Grid>
+    // </HStack>
+
+    <Flex
+      justifyContent="center"
+      alignItems="flex-start"
+      maxH={{ base: "100%", sm: "300px" }}
+      maxW={{ base: "100%", sm: "300px" }}
+    >
+      <Stack
+        direction={{ base: "column", sm: "row" }}
+        w="100%"
+        spacing={2}
+        pr={{ base: 0, sm: 2 }}
       >
-        <GridItem minW="250px" colStart={1} colEnd={2} rowStart={1} rowEnd={2}>
+        <Box minW="250px" pr={2}>
           <MessageInput onSubmit={addMessageHandler} />
-        </GridItem>
-        <GridItem
-          colStart={{ base: 1, md: 2 }}
-          colEnd={3}
-          rowStart={{ base: 2, md: 1 }}
-          rowEnd={3}
-        >
+        </Box>
+        <Box flex={1} maxW="100%">
           <MessageBoard messages={messages} />
-        </GridItem>
-      </Grid>
-    </VStack>
+        </Box>
+      </Stack>
+    </Flex>
   );
 }
 

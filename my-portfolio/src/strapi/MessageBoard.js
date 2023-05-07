@@ -1,4 +1,5 @@
 import { Card, Box, Text, Avatar, Flex } from "@chakra-ui/react";
+
 // import { fetchMessages } from "./api";
 function MessageBoard({ messages }) {
   if (messages.length === 0) {
@@ -8,8 +9,11 @@ function MessageBoard({ messages }) {
     <Card
       bg="transparent"
       borderRadius="50px"
+      flex={1}
+      h="100vh"
       padding="10px"
       boxShadow="0 0 50px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.5)"
+      overflowY="scroll"
     >
       {messages.map((message, index) => (
         <Flex
@@ -17,8 +21,7 @@ function MessageBoard({ messages }) {
           alignItems="center"
           style={{
             wordWrap: "break-word",
-            maxWidth: "500px",
-            overflow: "hidden"
+            maxWidth: "500px"
           }}
           p="10px"
         >
