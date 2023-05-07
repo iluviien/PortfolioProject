@@ -66,20 +66,6 @@ function MessagePlatform() {
 
   return (
     <VStack mt="100px">
-      {/* <Grid
-        templateColumns="repeat(2, 1fr)"
-        templateRows="repeat(2, 1fr)"
-        gap={7}
-        p="10px"
-      >
-        <GridItem minW="150px" colStart={1} colEnd={2} rowStart={1} rowEnd={2}>
-          <MessageInput onSubmit={addMessageHandler} />
-        </GridItem>
-
-        <GridItem colStart={2} colEnd={3}>
-          <MessageBoard messages={messages} />
-        </GridItem>
-      </Grid> */}
       <Grid
         templateColumns="repeat(2, 1fr)"
         templateRows={{ base: "repeat(3, 1fr)", md: "repeat(2, 1fr)" }}
