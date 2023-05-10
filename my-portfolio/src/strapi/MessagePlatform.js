@@ -95,7 +95,7 @@ function MessagePlatform() {
       justifyContent="center"
       alignItems="flex-start"
       maxH={{ base: "100%", sm: "300px" }}
-      maxW={{ base: "100%", sm: "300px" }}
+      maxW={{ base: "100%", sm: "300px", md: "600px", lg: "1200px" }}
     >
       <Stack
         direction={{ base: "column", sm: "row" }}
